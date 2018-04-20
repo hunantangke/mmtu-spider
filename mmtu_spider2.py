@@ -17,6 +17,7 @@ class Mmtu(object):
             self.mkdir(path)
             href = a['href']
             self.html(href)
+
     def html(self, href):
         html = self.request(href)
         max_span = BeautifulSoup(html.text, 'lxml').find(
@@ -41,11 +42,11 @@ class Mmtu(object):
     def mkdir(self, path):
         path = path.strip()
         # pic = os.path.join('E:\mnvtu', path)
-        isExists = os.path.exists(os.path.join('E:\mnvtu', path))
-        if not isExists:
+        is_exists = os.path.exists(os.path.join('E:\nvtu', path))
+        if not is_exists:
             print('创建', path, '文件夹！')
-            os.makedirs(os.path.join('E:\mnvtu', path))
-            os.chdir(os.path.join('E:\mnvtu', path))
+            os.makedirs(os.path.join('E:\nvtu', path))
+            os.chdir(os.path.join('E:\nvtu', path))
             return True
         else:
             print(path, '文件夹已存在')
