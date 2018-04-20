@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 import os
 
 
-
 class Mmtu(object):
     def all_url(self, url):
         html = self.request(url)
