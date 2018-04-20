@@ -5,7 +5,7 @@ import os
 
 
 class Mmtu(object):
-    def all_url(self, url):
+def all_url(self, url):
         html = self.request(url)
         soup = BeautifulSoup(html.text, 'lxml')
         all_a = soup.find('div', class_='all').find_all('a')
