@@ -1,10 +1,10 @@
+# tangke
 import requests
 from bs4 import BeautifulSoup
 import os
 
 
 class Mmtu(object):
-
     def all_url(self, url):
         html = self.request(url)
         soup = BeautifulSoup(html.text, 'lxml')
@@ -54,9 +54,11 @@ class Mmtu(object):
 
     def request(self, url):
         headers = {
-            'User-Agent': "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/22.0.1207.1 Safari/537.1"}
+            'User-Agent': "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko)"
+                          " Chrome/22.0.1207.1 Safari/537.1"}
         content = requests.get(url, headers=headers)
         return content
+
 
 meinv = Mmtu()
 meinv.all_url('http://www.mzitu.com/all')
